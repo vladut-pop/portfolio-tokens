@@ -1,12 +1,15 @@
 {
   "name": "portfolio-tokens",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "build/scss/_variables.scss",
   "repository": "https://github.com/vladut-pop/portfolio-tokens.git",
   "author": "Vladut Pop",
   "license": "MIT",
+  "files": ["build", "README.md", "package.json"],
   "scripts": {
-    "build:tokens": "token-transformer figma-tokens.json build/json/variables.json && style-dictionary build"
+    "build:tokens": "token-transformer figma-tokens.json build/json/variables.json && style-dictionary build",
+    "publish:dry" : "npm publish --dry-run",
+    "publish" : "npm publish"
   },
   "devDependencies": {
     "style-dictionary": "^3.7.2",
