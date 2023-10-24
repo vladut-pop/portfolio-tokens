@@ -1,18 +1,26 @@
 {
   "name": "portfolio-tokens",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "main": "build/scss/_variables.scss",
   "repository": "https://github.com/vladut-pop/portfolio-tokens.git",
   "author": "Vladut Pop",
   "license": "MIT",
-  "files": ["build", "README.md", "package.json"],
+  "files": [
+    "build",
+    "README.md",
+    "package.json"
+  ],
   "scripts": {
-    "build:tokens": "token-transformer figma-tokens.json build/json/variables.json && style-dictionary build",
-    "publish:dry" : "npm publish --dry-run",
-    "publish" : "npm publish"
+    "clean": "rimraf ./build",
+    "build:tokens": "yarn clean && token-transformer tokens/tokens.json build/json/variables.json && ts-node cli/getSCSS.ts",
+    "publish:dry": "npm publish --dry-run",
+    "publish": "npm publish"
   },
   "devDependencies": {
-    "style-dictionary": "^3.7.2",
-    "token-transformer": "^0.0.32"
+    "@types/node": "^20.8.7",
+    "rimraf": "^5.0.5",
+    "token-transformer": "^0.0.32",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
   }
 }
