@@ -18,7 +18,7 @@ Steps, to reproduce the tokens data:
 
 ```
 # yarn
-yarn add @hm-group/fabric-components
+yarn install
 ```
 
 2. Build .scss file
